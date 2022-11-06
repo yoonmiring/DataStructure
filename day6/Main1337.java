@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+
 public class Main1337 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,17 +18,19 @@ public class Main1337 {
             list.add(num);
         }
         list.sort(Comparator.naturalOrder());
-
+       
         int max = 0;
         int cnt = 0;
         int end = 0;
         if (n < 5) {
+            end = 1;
+        }else{
             end = n;
         }
 
         for (int i = 0; i < end; i++) {
             int newNum = list.get(i) + 4;
-            for (int j = 0; j < n - 1; j++) {
+            for (int j = 0; j < n - i; j++) {
                 int compareNum = list.get(i + j);
                 if (newNum >= compareNum) {
                     cnt++;
@@ -36,9 +39,9 @@ public class Main1337 {
                 }
             }
             if (cnt > max) {
-                max = cnt;
+                max = cnt;               
             }
-            cnt = 0;
+            cnt =0;
         }
         System.out.println(5 - max);
 
