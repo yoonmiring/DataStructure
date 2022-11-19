@@ -3,7 +3,6 @@ package day7;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 public class Main8911 {
     static int[] dx = { -1, 0, 1, 0 };
